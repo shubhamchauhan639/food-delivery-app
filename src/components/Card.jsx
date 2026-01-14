@@ -1,23 +1,26 @@
+import { CDN_URL } from "../utils/constants";
+
 const Card = (props)=>{
-  const {resData} = props
+  const resData = props; 
+  const {cloudinaryImageId , name , avgRating , cuisines , costForTwo , deliveryTime} = resData?.info
   return(
     
     <div className="res-card">
       <div className="card-image">
-        <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.info.cloudinaryImageId} alt="food" />
-    <span className="offer">{resData.info.costForTwo}</span>
+        <img src={CDN_URL + cloudinaryImageId} alt="food" />
+    <span className="offer">{costForTwo}</span>
   </div>
 
   <div className="card-body">
-    <h3>{resData.info.name}</h3>
+    <h3>{name}</h3>
 
     <div className="rating-time">
-      <span className="rating">{resData.info.avgRating}</span>
-      <span>{resData.info.deliveryTime}</span>
+      <span className="rating">{avgRating} stars</span>
+      <span>{deliveryTime} min</span>
     </div>
 
-    <p className="cuisine">{resData.info.cuisines}</p>
-    <p className="location">{resData.info.locality}</p>
+    <p className="cuisine">{cuisines}</p>
+    <p className="location">{locality}</p>
   </div>
     </div>
   )

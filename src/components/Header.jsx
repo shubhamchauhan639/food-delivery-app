@@ -1,8 +1,9 @@
+import { LOGO_URL } from "../utils/constants";
 const Header = ()=>{
   return(
   <div className="header">
     <div className="logo-container">
-      <img className="logo" src="https://png.pngtree.com/png-vector/20250217/ourmid/pngtree-unique-food-logo-png-image_15488394.png"  />     
+      <img className="logo" src={LOGO_URL}  />     
     </div>
 <div className="nav-item">
   <ul>
