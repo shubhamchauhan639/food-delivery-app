@@ -1,4 +1,196 @@
-const resObj = [
+let resObj = [
+    {
+"@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+"info": {
+"id": "1003414",
+"name": "Pizza Hut",
+"cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/9/1/bd7954b5-a431-4726-b2da-4670ceba472d_1003414.JPG",
+"locality": "Chhindwara",
+"areaName": "Chhindwara City",
+"costForTwo": "₹350 for two",
+"cuisines": [
+"Pizzas"
+],
+"avgRating": 4.3,
+"parentId": "721",
+"avgRatingString": "4.3",
+"totalRatingsString": "241",
+"sla": {
+"deliveryTime": 55,
+"lastMileTravel": 14.1,
+"serviceability": "SERVICEABLE",
+"slaString": "50-60 mins",
+"lastMileTravelString": "14.1 km",
+"iconType": "ICON_TYPE_EMPTY"
+},
+"availability": {
+"nextCloseTime": "2026-01-17 00:00:00",
+"opened": true
+},
+"badges": {},
+"isOpen": true,
+"type": "F",
+"badgesV2": {
+"entityBadges": {
+"imageBased": {},
+"textBased": {},
+"textExtendedBadges": {}
+}
+},
+"aggregatedDiscountInfoV3": {
+"header": "ITEMS",
+"subHeader": "AT ₹59"
+},
+"orderabilityCommunication": {
+"title": {},
+"subTitle": {},
+"message": {},
+"customIcon": {}
+},
+"differentiatedUi": {
+"displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+"differentiatedUiMediaDetails": {
+"mediaType": "ADS_MEDIA_ENUM_IMAGE",
+"lottie": {},
+"video": {}
+}
+},
+"reviewsSummary": {},
+"displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+"restaurantOfferPresentationInfo": {},
+"externalRatings": {
+"aggregatedRating": {
+"rating": "--"
+}
+},
+"ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+},
+"analytics": {
+"context": "seo-data-4827d129-bde4-45b5-a871-33a3185baf38"
+},
+"cta": {
+"link": "https://www.swiggy.com/city/chhindwara/pizza-hut-chhindwara-city-rest1003414",
+"text": "RESTAURANT_MENU",
+"type": "WEBLINK"
+},
+"widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+},
+{
+"@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+"info": {
+"id": "150602",
+"name": "Raimens Cafe 79",
+"cloudinaryImageId": "eohdm5sdnq6e2u46xeux",
+"locality": "Teacher's Colony",
+"areaName": "VIP Road",
+"costForTwo": "₹250 for two",
+"cuisines": [
+"Bakery",
+"Pizzas",
+"Snacks",
+"Beverages"
+],
+"avgRating": 4.4,
+"veg": true,
+"parentId": "164782",
+"avgRatingString": "4.4",
+"totalRatingsString": "5.0K+",
+"sla": {
+"deliveryTime": 54,
+"lastMileTravel": 14.4,
+"serviceability": "SERVICEABLE",
+"slaString": "50-60 mins",
+"lastMileTravelString": "14.4 km",
+"iconType": "ICON_TYPE_EMPTY"
+},
+"availability": {
+"nextCloseTime": "2026-01-16 22:30:00",
+"opened": true
+},
+"badges": {
+"imageBadges": [
+{
+"imageId": "Rxawards/_CATEGORY-Desserts.png",
+"description": "Delivery!"
+},
+{
+"imageId": "Ratnesh_Badges/Rx_Awards_2025/_Legendary%20Restaurants.png",
+"description": "Delivery!"
+},
+{
+"imageId": "v1695133679/badges/Pure_Veg111.png",
+"description": "pureveg"
+}
+]
+},
+"isOpen": true,
+"type": "F",
+"badgesV2": {
+"entityBadges": {
+"imageBased": {
+"badgeObject": [
+{
+"attributes": {
+"description": "Delivery!",
+"imageId": "Rxawards/_CATEGORY-Desserts.png"
+}
+},
+{
+"attributes": {
+"description": "Delivery!",
+"imageId": "Ratnesh_Badges/Rx_Awards_2025/_Legendary%20Restaurants.png"
+}
+},
+{
+"attributes": {
+"description": "pureveg",
+"imageId": "v1695133679/badges/Pure_Veg111.png"
+}
+}
+]
+},
+"textBased": {},
+"textExtendedBadges": {}
+}
+},
+"aggregatedDiscountInfoV3": {
+"header": "ITEMS",
+"subHeader": "AT ₹59"
+},
+"orderabilityCommunication": {
+"title": {},
+"subTitle": {},
+"message": {},
+"customIcon": {}
+},
+"differentiatedUi": {
+"displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+"differentiatedUiMediaDetails": {
+"mediaType": "ADS_MEDIA_ENUM_IMAGE",
+"lottie": {},
+"video": {}
+}
+},
+"reviewsSummary": {},
+"displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+"restaurantOfferPresentationInfo": {},
+"externalRatings": {
+"aggregatedRating": {
+"rating": "--"
+}
+},
+"ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+},
+"analytics": {
+"context": "seo-data-4827d129-bde4-45b5-a871-33a3185baf38"
+},
+"cta": {
+"link": "https://www.swiggy.com/city/chhindwara/raimens-cafe-79-teachers-colony-vip-road-rest150602",
+"text": "RESTAURANT_MENU",
+"type": "WEBLINK"
+},
+"widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+},
 {
 "info": {
 "id": "234875",
@@ -11,7 +203,7 @@ const resObj = [
 "Biryani",
 "Tandoor"
 ],
-"avgRating": 4.4,
+"avgRating": 3.4,
 "parentId": "27123",
 "avgRatingString": "4.4",
 "totalRatingsString": "1.4K+",
@@ -79,7 +271,7 @@ const resObj = [
 "Fast Food",
 "Desserts"
 ],
-"avgRating": 4.3,
+"avgRating": 3.3,
 "veg": true,
 "parentId": "101802",
 "avgRatingString": "4.3",
@@ -165,7 +357,7 @@ const resObj = [
 "Fast Food",
 "Beverages"
 ],
-"avgRating": 4.2,
+"avgRating": 3.2,
 "parentId": "71556",
 "avgRatingString": "4.2",
 "totalRatingsString": "647",
