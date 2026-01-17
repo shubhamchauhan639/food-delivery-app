@@ -96,12 +96,14 @@
 }
 
 .filter {
+  margin-right: 50;
   padding: 20px 40px;
   display: flex;
   align-items: center;
 }
 
 .filter-button {
+   margin-right: 50;
   background-color: #ffffff;
   color: #111827;
   border: 1px solid #e5e7eb;
