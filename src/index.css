@@ -7,7 +7,16 @@
   border-bottom: 1px solid #e5e7eb; /* light border */
   padding-right: 60px;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 
+.body {
+  width: 100%;
+  padding: 0 16px;       /* clean side spacing */
+  box-sizing: border-box;
+}
 
 .logo{
   width: 200px;
@@ -23,16 +32,20 @@
   margin: 10px;
 }
 .container{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+   display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 28px;
-  padding: 20px 40px;   /* side spacing like screenshot */
-  max-width: 1200px;
-  margin: 0 auto;       /* center content */
+
+  max-width: 1400px;     /* ⬅️ KEY LINE */
+  margin: 0 auto;        /* center nicely */
+  padding: 16px 0;
+
 }  
 
 .res-card{
   width: 100%;
+   max-width: 100%;
   border-radius: 16px;
   overflow: hidden;
   background-color: #fff;
@@ -45,7 +58,7 @@
 }
 .card-image {
   position: relative;
- height: 180px;
+ height: 220px; 
 }
 
 .card-image img {
@@ -96,14 +109,14 @@
 }
 
 .filter {
-  margin-right: 50;
-  padding: 20px 40px;
+ 
+   padding: 20px 40px;  /* keep same as container */
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .filter-button {
-   margin-right: 50;
   background-color: #ffffff;
   color: #111827;
   border: 1px solid #e5e7eb;
