@@ -166,3 +166,32 @@ body {
     background-position: -100% 0;
   }
 }
+.login-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.login-btn:hover {
+  background-color: #f97316; /* Swiggy orange */
+  color: #ffffff;
+  border-color: #f97316;
+}
+
+/* Active click */
+.login-btn:active {
+  transform: scale(0.96);
+}
+
+/* Focus (keyboard) */
+.login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.35);
+}
