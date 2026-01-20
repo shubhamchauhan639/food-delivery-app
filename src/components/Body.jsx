@@ -11,7 +11,7 @@ const Body = ()=> {
   },[])
   
   const fetchData =async ()=>{
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#");
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.765495&lng=77.19021219999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json = await data.json();
  const restaurants =
     json?.data?.cards?.find(
@@ -28,6 +28,10 @@ const Body = ()=> {
 return(
   <div className="body">
     <div className="filter">
+      <div className="search">
+        <input type="text" className="search-box" />
+        <button>Search</button>
+      </div>
     <button className="filter-button" onClick={()=>{
     const FilterList = listOfRes.filter(
       (res) => res.info.avgRating > 4
