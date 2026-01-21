@@ -1,4 +1,5 @@
 import { CDN_URL } from "../utils/constants";
+
 const Card = ({ resData }) => {
   const {
     cloudinaryImageId,
@@ -7,7 +8,8 @@ const Card = ({ resData }) => {
     cuisines,
     costForTwo,
     deliveryTime,
-    locality
+    locality,
+    sla
   } = resData;
 
   return (
@@ -22,7 +24,8 @@ const Card = ({ resData }) => {
 
         <div className="rating-time">
           <span className="rating">{avgRating} stars</span>
-          <span>{deliveryTime} min</span>
+          <span>{sla?.slaString}</span>
+          <span>{deliveryTime}</span>
         </div>
 
         <p className="cuisine">{cuisines?.join(", ")}</p>
