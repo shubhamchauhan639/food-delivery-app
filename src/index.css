@@ -1,171 +1,40 @@
+/* ===================== RESET ===================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+/* ===================== HEADER ===================== */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
+  padding: 18px 60px;
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb; /* light border */
-  padding-right: 60px;
-}
-body {
-  margin: 0;
-  padding: 0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.body {
-  width: 100%;
-  padding: 0 16px;       /* clean side spacing */
-  box-sizing: border-box;
-}
-
-.logo{
+.logo {
   width: 200px;
 }
 
 .nav-item > ul {
-  font-size: 24px;
   display: flex;
-  list-style-type: none;
-}
-.nav-item > ul > li {
-  padding: 10px;
-  margin: 10px;
-}
-.container{
-   display: grid;
-
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
-
-  max-width: 1400px;     /* ⬅️ KEY LINE */
-  margin: 0 auto;        /* center nicely */
-  padding: 16px 0;
-
-}  
-
-.res-card{
-  width: 100%;
-   max-width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search{
-  padding: 10px;
-}
-.card-image {
-  position: relative;
- height: 220px; 
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-.offer {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-.card-body {
-  padding: 12px 6px;
-}
-
-.card-body h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.rating-time {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  list-style: none;
+  font-size: 16px;
   font-weight: 500;
-  margin-bottom: 6px;
 }
 
-.rating {
-  color: #16a34a; /* green */
-}
-.cuisine,
-.location {
-  font-size: 14px;
-  color: #6b7280;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.filter {
- 
-   padding: 20px 40px;  /* keep same as container */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.filter-button {
-  background-color: #ffffff;
-  color: #111827;
-  border: 1px solid #e5e7eb;
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 999px; /* pill shape */
+.nav-item > ul > li {
+  margin-left: 24px;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.filter-button:hover {
-  background-color: #f97316; /* Swiggy orange */
-  color: #ffffff;
-  border-color: #f97316;
-}
-
-.filter-button:active {
-  transform: scale(0.97);
-}
-.shimmer-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 40px;
-}
-
-.shimmer-card {
-  width: 260px;
-  height: 300px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 37%,
-    #e0e0e0 63%
-  );
-  background-size: 400% 100%;
-  animation: shimmer 1.4s ease infinite;
-  border-radius: 12px;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
+/* ===================== LOGIN BUTTON ===================== */
 .login-btn {
   padding: 10px 22px;
   border-radius: 999px;
@@ -178,20 +47,193 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Hover */
 .login-btn:hover {
-  background-color: #f97316; /* Swiggy orange */
+  background-color: #fc8019;
   color: #ffffff;
-  border-color: #f97316;
+  border-color: #fc8019;
 }
 
-/* Active click */
 .login-btn:active {
   transform: scale(0.96);
 }
 
-/* Focus (keyboard) */
-.login-btn:focus {
+/* ===================== SEARCH + FILTER ===================== */
+.search,
+.filter {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Search box */
+.search-box {
+  width: 480px;
+  padding: 16px 22px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e5e7eb;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.35);
+  transition: all 0.25s ease;
+}
+
+.search-box::placeholder {
+  color: #9ca3af;
+}
+
+.search-box:focus {
+  border-color: #fc8019;
+  box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.15);
+}
+
+/* Search button */
+.search button {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fc8019, #f97316);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(252, 128, 25, 0.35);
+}
+
+/* ===================== FILTER BUTTON ===================== */
+.filter-button {
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #fc8019;
+  color: #ffffff;
+  border-color: #fc8019;
+  box-shadow: 0 6px 14px rgba(252, 128, 25, 0.25);
+}
+
+/* ===================== CARDS GRID ===================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.res-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.res-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ===================== CARD IMAGE ===================== */
+.card-image {
+  position: relative;
+  height: 220px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Offer badge */
+.offer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* ===================== CARD BODY ===================== */
+.card-body {
+  padding: 14px 6px;
+}
+
+.card-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.rating-time {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.rating {
+  color: #16a34a;
+}
+
+.cuisine,
+.location {
+  font-size: 14px;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===================== SHIMMER ===================== */
+.shimmer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  width: 260px;
+  height: 300px;
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f5f5f5 37%,
+    #e0e0e0 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
