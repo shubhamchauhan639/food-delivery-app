@@ -6,22 +6,27 @@ import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error"
 import Contact from './components/Contact.jsx'
 import About from './components/About.jsx'
+import Body from './components/Body.jsx'
 
-const appRouter = createBrowserRouter([
+const appRouter= createBrowserRouter([{
+  path : "/",
+  element: <AppLayout/>,
+children : [
   {
-    path: "/",
-    element: <AppLayout />,
-    errorElement: <Error />
+path : "/",
+element : <Body/>
   },
   {
-    path: "/about",
-    element: <About />
+    path : "/about",
+    element : <About/>
   },
   {
-    path: "/contact",
-    element: <Contact />
+    path : "/contact",
+    element : <Contact/>
   }
-]);
+],
+errorElement : <Error/>
+}])
 
 
 createRoot(document.getElementById('root')).render(

@@ -8,8 +8,8 @@ const AppLayout =()=> {
   return(
     <div className="app">
       <Header/>
-     
-      <Body/>
+  <Outlet/>   
+  
     
      
     </div>
