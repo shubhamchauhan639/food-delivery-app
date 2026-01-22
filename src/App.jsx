@@ -10,7 +10,7 @@ const AppLayout =()=> {
       <Header/>
      
       <Body/>
-     <Outlet/>
+    
      
     </div>
   )
