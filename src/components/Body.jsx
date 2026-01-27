@@ -1,6 +1,7 @@
 import Card from "./Card"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmers";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([])
   const [filterRest , setFilterRes] = useState([])
@@ -13,12 +14,11 @@ const Body = () => {
   }, [])
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.765495&lng=77.19021219999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch("https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants");
     const json = await data.json();
     const restaurants =
-      json?.data?.cards?.find(
-        (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      )?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+         json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || [];
 
     setListOfRes(restaurants);
     setFilterRes(restaurants)
@@ -46,17 +46,24 @@ const Body = () => {
           }>Search</button>
         </div>
         <button className="filter-button" onClick={() => {
-          const FilterList = listOfRes.filter(
-            (res) => res.info.avgRating > 4
-          );
-          setListOfRes(FilterList)
-          // console.log(listOfRes)
-        }}>Top Rated restaurant</button>
-      </div>
-      <div className="container">
+           const FilterList = listOfRes.filter(
+      (res) => res.info.avgRating > 4.5
+    );
 
-        {filterRest.map((restaurant) => (<Card key={restaurant.info.id} resData={restaurant.info} />))}
+    
+    setFilterRes(FilterList); 
+  }}>Top Rated restaurant</button>
       </div>
+     <div className="container">
+  {filterRest.map((rest) => (
+    <Link
+      key={rest.info.id}
+      to={"/restaurant/" + rest.info.id}
+    >
+      <Card resData={rest.info} />
+    </Link>
+  ))}
+</div>
     </div>
   )
 }

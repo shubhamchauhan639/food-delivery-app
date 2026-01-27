@@ -18,11 +18,11 @@ const RestaurantMenu = () => {
     );
     const json = await data.json();
 
-    // ✅ restaurant info
+   
     const restaurantInfo =
       json?.data?.cards[2]?.card?.card?.info;
 
-    // ✅ item cards (Recommended)
+    
     const itemCards =
       json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
         ?.card?.itemCards;
