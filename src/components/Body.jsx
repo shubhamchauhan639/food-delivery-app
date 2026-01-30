@@ -2,6 +2,7 @@ import Card from "./Card"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmers";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([])
   const [filterRest , setFilterRes] = useState([])
@@ -23,6 +24,12 @@ const Body = () => {
     setListOfRes(restaurants);
     setFilterRes(restaurants)
   }
+  const onlineStatus = useOnlineStatus()
+  if (onlineStatus === false)
+    return(<h1>
+      you are ofline check ur internet connnection
+    </h1>
+  );
   if (listOfRes.length === 0) {
     return <Shimmer />
   }
