@@ -8,8 +8,8 @@ const Body = () => {
   const [filterRest , setFilterRes] = useState([])
   const [searchText , setSearchText] = useState("")
   // let resList = 
-  // console.log("resObj:", resList);
-  // console.log("resObj[1]:", resList[0]);
+  console.log("resObj:", resList);
+  console.log("resObj[1]:", resList[0]);
   useEffect(() => {
     fetchData()
   }, [])
