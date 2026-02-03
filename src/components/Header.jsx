@@ -13,7 +13,7 @@ const Header = ()=>{
   <ul>
     <li><Link to = "/">Home</Link></li>
     <li><Link to ="/about">Help</Link></li>
-    <li>Offers</li>
+    <li><Link to= "/offers">Offers</Link></li>
     <li>cart</li>
     <button className="login-btn" onClick={()=> {
       loginButton === "Log In" 
