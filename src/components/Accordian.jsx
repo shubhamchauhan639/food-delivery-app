@@ -1,49 +1,48 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 
+function Accordion({ items }) {
 
-// function Accordion({ items }) {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-//   const [activeIndex, setActiveIndex] = useState(null);
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
-//   const handleToggle = (index) => {
-//     setActiveIndex(activeIndex === index ? null : index);
-//   };
+  if (!items || items.length === 0) {
+    return <p>No items available.</p>;
+  }
 
-//   if (!items || items.length === 0) {
-//     return <p>No items available.</p>;
-//   }
+  return (
+    <div className="accordion">
+      {items.map((item, index) => (
+        <div key={index} className="accordion-item">
 
-//   return (
-//     <div className="accordion">
-//       {items.map((item, index) => (
-//         <div key={index} className="accordion-item">
+          <button
+            className="accordion-title"
+            onClick={() => handleToggle(index)}
+            aria-expanded={activeIndex === index}
+          >
+            {item.title}
 
-//           <button
-//             className="accordion-title"
-//             onClick={() => handleToggle(index)}
-//             aria-expanded={activeIndex === index}
-//           >
-//             {item.title}
+            {activeIndex === index ? (
+              <FaChevronUp style={{ float: 'right' }} />
+            ) : (
+              <FaChevronDown style={{ float: 'right' }} />
+            )}
 
-//             {activeIndex === index ? (
-//               <FaChevronUp style={{ float: 'right' }} />
-//             ) : (
-//               <FaChevronDown style={{ float: 'right' }} />
-//             )}
+          </button>
 
-//           </button>
+          {activeIndex === index && (
+            <div className="accordion-content">
+              {item.content}
+            </div>
+          )}
 
-//           {activeIndex === index && (
-//             <div className="accordion-content">
-//               {item.content}
-//             </div>
-//           )}
+        </div>
+      ))}
+    </div>
+  );
+}
 
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default Accordion;
+export default Accordion;

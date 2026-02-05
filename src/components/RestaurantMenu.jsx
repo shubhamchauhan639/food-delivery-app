@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmers";
 import { useParams } from "react-router-dom";
 import { MenuApi } from "../utils/constants";
-// import Accordion from "./Accordian";
+import Accordion from "./Accordian";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
     <div className="menu">
       <h1>{name}</h1>
       <h2>{cuisines.join(", ")}</h2>
-      {/* <Accordion/> */}
+      <Accordion/>
       <p>{costForTwo}</p>
 
       <h3>Menu</h3>
