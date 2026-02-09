@@ -33,7 +33,6 @@ const RestaurantMenu = () => {
 
   const { name, cuisines, costForTwo } = resInfo;
 
-  // 🔥 Convert menuItems → accordion format
   const accordionData = menuItems.map((item) => ({
     title: item?.card?.info?.name,
     content: `₹${(item?.card?.info?.price || item?.card?.info?.defaultPrice || 0) / 100
