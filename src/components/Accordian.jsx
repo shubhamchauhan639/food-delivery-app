@@ -3,7 +3,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function Accordion({ items }) {
   const [activeIndex, setActiveIndex] = useState(null);
-//toggle feature
+
   const handleToggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
