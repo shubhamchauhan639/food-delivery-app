@@ -7,7 +7,7 @@ const Body = () => {
   const [listOfRes, setListOfRes] = useState([])
   const [filterRest , setFilterRes] = useState([])
   const [searchText , setSearchText] = useState("")
-  // let resList = 
+ 
  
   useEffect(() => {
     fetchData()
