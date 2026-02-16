@@ -26,7 +26,7 @@ const Body = () => {
   const onlineStatus = useOnlineStatus()
   if (onlineStatus === false)
     return(<h1>
-      you are ofline check ur internet connnection
+      you are ofline check your internet connnection
     </h1>
   );
   if (listOfRes.length === 0) {
