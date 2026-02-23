@@ -8,6 +8,7 @@ import Contact from './components/Contact.jsx'
 import About from './components/About.jsx'
 import Body from './components/Body.jsx'
 import RestaurantMenu from './components/RestaurantMenu.jsx'
+import Offer from './components/Offer.jsx'
 
 const appRouter= createBrowserRouter([{
   path : "/",
@@ -24,6 +25,10 @@ element : <Body/>
   {
     path : "/contact",
     element : <Contact/>
+  },
+  {
+    path : "/offers",
+    element : <Offer/>
   },
   {
     path: "/restaurant/:resId",
