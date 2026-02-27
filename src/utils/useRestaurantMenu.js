@@ -25,6 +25,6 @@ const useRestaurantMenu = (resId) => {
   };
 
   return { resInfo, menuItems };
-};
+}
 
 export default useRestaurantMenu;
