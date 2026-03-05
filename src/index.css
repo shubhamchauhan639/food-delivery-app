@@ -289,3 +289,32 @@ body {
   color: #666;
   text-align: center;
 }
+.toggle-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+
+  margin-top:40px;     /* space from header */
+  margin-bottom:30px;  /* space from search bar */
+}
+.toggle-container button{
+  padding:14px 40px;
+  font-size:18px;
+  font-weight:600;
+  border:none;
+  border-radius:40px;
+  background:#f1f1f1;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+/* active tab */
+.toggle-container button.active-tab{
+  background:#ff7a00;
+  color:white;
+}
+
+.toggle-container button:hover{
+  transform:scale(1.05);
+}
