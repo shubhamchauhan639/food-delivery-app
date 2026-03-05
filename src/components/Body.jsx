@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmers";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Grocery from "./Grocery";
 
 const Body = () => {
-
   const [listOfRes, setListOfRes] = useState([]);
   const [filterRest, setFilterRes] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [isGrocery, setIsGrocery] = useState(false); // toggle state
+  const [isGrocery, setIsGrocery] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -35,14 +35,14 @@ const Body = () => {
   if (onlineStatus === false)
     return <h1>You are offline. Check your internet connection.</h1>;
 
-  if (listOfRes.length === 0) {
+  if (!isGrocery && listOfRes.length === 0) {
     return <Shimmer />;
   }
 
   return (
     <div className="body">
 
-      {/* Toggle Button */}
+      {/* Toggle Tabs */}
       <div className="toggle-container">
         <button
           className={!isGrocery ? "active-tab" : ""}
@@ -59,7 +59,7 @@ const Body = () => {
         </button>
       </div>
 
-      {/* Hide filters when grocery tab is active */}
+      {/* Show filters only in Food tab */}
       {!isGrocery && (
         <div className="filter">
           <div className="search">
@@ -67,9 +67,7 @@ const Body = () => {
               type="text"
               className="search-box"
               value={searchText}
-              onChange={(e) => {
-                setSearchText(e.target.value);
-              }}
+              onChange={(e) => setSearchText(e.target.value)}
             />
 
             <button
@@ -79,7 +77,6 @@ const Body = () => {
                     ?.toLowerCase()
                     .includes(searchText.toLowerCase())
                 );
-
                 setFilterRes(filteredRes);
               }}
             >
@@ -93,7 +90,6 @@ const Body = () => {
               const FilterList = listOfRes.filter(
                 (res) => res.info.avgRating > 4.5
               );
-
               setFilterRes(FilterList);
             }}
           >
@@ -102,20 +98,18 @@ const Body = () => {
         </div>
       )}
 
-      {/* Main Container */}
-      <div className="container">
-
-        {isGrocery ? (
-          <h2>🛒 Grocery Section Coming Soon</h2>
-        ) : (
-          filterRest.map((rest) => (
+      {/* Main Content */}
+      {isGrocery ? (
+        <Grocery />
+      ) : (
+        <div className="container">
+          {filterRest.map((rest) => (
             <Link key={rest.info.id} to={"/restaurant/" + rest.info.id}>
               <Card resData={rest.info} />
             </Link>
-          ))
-        )}
-
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
