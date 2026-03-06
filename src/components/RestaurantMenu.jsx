@@ -12,14 +12,35 @@ const RestaurantMenu = () => {
 
   const { name, cuisines, costForTwo } = resInfo;
 
-  const accordionData = menuItems.map((item) => ({
-    title: item?.card?.info?.name,
-    content: `₹${
-      (item?.card?.info?.price ||
-        item?.card?.info?.defaultPrice ||
-        0) / 100
-    }`,
-  }));
+  // ⭐ CATEGORY BASED MENU
+  const accordionData = [
+    {
+      title: "Pizzas",
+      content: menuItems.map((item) => ({
+        name: item?.card?.info?.name,
+        price:
+          (item?.card?.info?.price ||
+            item?.card?.info?.defaultPrice ||
+            0) / 100,
+      })),
+    },
+    {
+      title: "Drinks",
+      content: [
+        { name: "Coca Cola", price: 60 },
+        { name: "Pepsi", price: 60 },
+        { name: "Sprite", price: 60 },
+      ],
+    },
+    {
+      title: "Snacks",
+      content: [
+        { name: "Garlic Bread", price: 120 },
+        { name: "French Fries", price: 99 },
+        { name: "Cheese Balls", price: 140 },
+      ],
+    },
+  ];
 
   return (
     <div className="menu">

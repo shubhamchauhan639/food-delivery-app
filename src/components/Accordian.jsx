@@ -1,60 +1,48 @@
 import { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-function Accordion({ items }) {
-  const [activeIndex, setActiveIndex] = useState(null);
-// toggle feature
-  const handleToggle = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+const Accordion = ({ items }) => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
-  if (!items || items.length === 0) {
-    return <p>No items available.</p>;
-  }
-
   return (
-    <div className="accordion">
+    <div className="accordion-container">
       {items.map((item, index) => (
         <div key={index} className="accordion-item">
-          <button
-            className="accordion-title"
-            onClick={() => handleToggle(index)}
-            style={{
-              width: "100%",
-              padding: "10px",
-              textAlign: "left",
-              fontWeight: "bold",
-              cursor: "pointer",
-              background: "#f3f3f3",
-              border: "none",
-              marginBottom: "5px",
-            }}
+
+          {/* HEADER */}
+          <div
+            className="accordion-header"
+            onClick={() => toggleAccordion(index)}
           >
-            {item.title}
+            <span className="accordion-title">
+              {item.title} ({item.content.length})
+            </span>
 
-            {activeIndex === index ? (
-              <FaChevronUp style={{ float: "right" }} />
-            ) : (
-              <FaChevronDown style={{ float: "right" }} />
-            )}
-          </button>
+            {/* Arrow */}
+            <span className="accordion-arrow">
+              {openIndex === index ? "▲" : "▼"}
+            </span>
+          </div>
 
-          {activeIndex === index && (
-            <div
-              className="accordion-content"
-              style={{
-                padding: "10px",
-                background: "#fafafa",
-                border: "1px solid #ddd",
-              }}
-            >
-              {item.content}
+          {/* CONTENT */}
+          {openIndex === index && (
+            <div className="accordion-content">
+              {item.content.map((food, i) => (
+                <div key={i} className="menu-row">
+                  <span>{food.name}</span>
+                  <span>₹{food.price}</span>
+                </div>
+              ))}
             </div>
           )}
+
         </div>
       ))}
     </div>
   );
-}
+};
 
 export default Accordion;
