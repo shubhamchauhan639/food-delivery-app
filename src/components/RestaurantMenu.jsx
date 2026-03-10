@@ -1,3 +1,4 @@
+import React from "react";
 import Shimmer from "./Shimmers";
 import { useParams } from "react-router-dom";
 import Accordion from "./Accordian";
@@ -12,7 +13,6 @@ const RestaurantMenu = () => {
 
   const { name, cuisines, costForTwo } = resInfo;
 
-  // ⭐ CATEGORY BASED MENU
   const accordionData = [
     {
       title: "Pizzas",
@@ -43,12 +43,20 @@ const RestaurantMenu = () => {
   ];
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h2>{cuisines?.join(", ")}</h2>
-      <p>{costForTwo}</p>
+    <div className="max-w-[800px] mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center mb-2">{name}</h1>
 
-      <h3>Menu</h3>
+      <h2 className="text-gray-600 text-center mb-2">
+        {cuisines?.join(", ")}
+      </h2>
+
+      <p className="text-center text-lg font-medium mb-6">
+        {costForTwo}
+      </p>
+
+      <h3 className="text-xl font-semibold mb-4 text-center">
+        Menu
+      </h3>
 
       <Accordion items={accordionData} />
     </div>
