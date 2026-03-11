@@ -22,7 +22,7 @@ const Header = () => {
         </li>
 
         <li className="hover:text-orange-500 cursor-pointer">
-          <Link to="/about">Help</Link>
+          <Link to="/help">Help</Link>
         </li>
 
         <li className="hover:text-orange-500 cursor-pointer">

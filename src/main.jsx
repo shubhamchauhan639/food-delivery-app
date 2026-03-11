@@ -5,10 +5,11 @@ import AppLayout from './App.jsx'
 import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import Error from "./components/Error"
 import Contact from './components/Contact.jsx'
-import About from './components/About.jsx'
+import Help from './components/Help.jsx'
 import Body from './components/Body.jsx'
 import RestaurantMenu from './components/RestaurantMenu.jsx'
 import Offer from './components/Offer.jsx'
+
 
 
 
@@ -23,8 +24,8 @@ path : "/",
 element : <Body/>
   },
   {
-    path : "/about",
-    element : <About/>
+    path : "/help",
+    element : <Help/>
   },
   {
     path : "/contact",
