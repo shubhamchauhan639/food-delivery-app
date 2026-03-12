@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Shimmer from "./Shimmers";
 import { useParams } from "react-router-dom";
 import Accordion from "./Accordian";
@@ -9,56 +9,59 @@ const RestaurantMenu = () => {
 
   const { resInfo, menuItems } = useRestaurantMenu(resId);
 
+  const [showIndex, setShowIndex] = useState(0);
+
   if (!resInfo) return <Shimmer />;
 
-  const { name, cuisines, costForTwo } = resInfo;
-
-  const accordionData = [
-    {
-      title: "Pizzas",
-      content: menuItems.map((item) => ({
-        name: item?.card?.info?.name,
-        price:
-          (item?.card?.info?.price ||
-            item?.card?.info?.defaultPrice ||
-            0) / 100,
-      })),
-    },
-    {
-      title: "Drinks",
-      content: [
-        { name: "Coca Cola", price: 60 },
-        { name: "Pepsi", price: 60 },
-        { name: "Sprite", price: 60 },
-      ],
-    },
-    {
-      title: "Snacks",
-      content: [
-        { name: "Garlic Bread", price: 120 },
-        { name: "French Fries", price: 99 },
-        { name: "Cheese Balls", price: 140 },
-      ],
-    },
-  ];
+  const { name, cuisines, costForTwo, avgRating, totalRatingsString } = resInfo;
 
   return (
-    <div className="max-w-[800px] mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-2">{name}</h1>
+    <div className="max-w-[850px] mx-auto px-4 py-10">
 
-      <h2 className="text-gray-600 text-center mb-2">
-        {cuisines?.join(", ")}
-      </h2>
+      {/* Restaurant Card */}
+      <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 mb-8 text-center">
 
-      <p className="text-center text-lg font-medium mb-6">
-        {costForTwo}
-      </p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          {name}
+        </h1>
 
-      <h3 className="text-xl font-semibold mb-4 text-center">
+        <p className="text-gray-500 text-sm mb-1">
+          {cuisines?.join(", ")}
+        </p>
+
+        <p className="text-gray-600 text-sm mb-3">
+          {costForTwo}
+        </p>
+
+        {/* Rating */}
+        {avgRating && (
+          <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+            ⭐ {avgRating}
+            <span className="text-gray-500 text-xs">
+              ({totalRatingsString})
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Menu Heading */}
+      <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
         Menu
       </h3>
 
-      <Accordion items={accordionData} />
+      {/* Accordion Menu */}
+      <div className="space-y-5">
+        {menuItems?.map((category, index) => (
+          <Accordion
+            key={index}
+            title={category?.card?.card?.title}
+            items={category?.card?.card?.itemCards}
+            isOpen={index === showIndex}
+            setShowIndex={() => setShowIndex(index)}
+          />
+        ))}
+      </div>
+
     </div>
   );
 };
