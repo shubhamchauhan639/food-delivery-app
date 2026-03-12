@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
   return (
     <div className="max-w-[850px] mx-auto px-4 py-10">
 
-      {/* Restaurant Card */}
+      
       <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 mb-8 text-center">
 
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -33,7 +33,7 @@ const RestaurantMenu = () => {
           {costForTwo}
         </p>
 
-        {/* Rating */}
+  
         {avgRating && (
           <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
             ⭐ {avgRating}
@@ -44,12 +44,11 @@ const RestaurantMenu = () => {
         )}
       </div>
 
-      {/* Menu Heading */}
+   
       <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
         Menu
       </h3>
 
-      {/* Accordion Menu */}
       <div className="space-y-5">
         {menuItems?.map((category, index) => (
           <Accordion
