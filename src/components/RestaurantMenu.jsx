@@ -10,6 +10,8 @@ const RestaurantMenu = () => {
   const { resInfo, menuItems } = useRestaurantMenu(resId);
 
   const [showIndex, setShowIndex] = useState(0);
+  const [vegOnly , setVegOnly] = useState(false);
+
 
   if (!resInfo) return <Shimmer />;
 
