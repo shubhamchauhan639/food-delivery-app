@@ -22,7 +22,6 @@ const Body = () => {
     );
 
     const json = await data.json();
-
     const restaurants =
       json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
@@ -47,22 +46,20 @@ const Body = () => {
 
       <div className="flex justify-center gap-5 mt-8 mb-8">
         <button
-          className={`px-8 py-3 rounded-full font-semibold ${
-            !isGrocery
+          className={`px-8 py-3 rounded-full font-semibold ${!isGrocery
               ? "bg-orange-500 text-white"
               : "bg-gray-200 hover:bg-gray-300"
-          }`}
+            }`}
           onClick={() => setIsGrocery(false)}
         >
           Food
         </button>
 
         <button
-          className={`px-8 py-3 rounded-full font-semibold ${
-            isGrocery
+          className={`px-8 py-3 rounded-full font-semibold ${isGrocery
               ? "bg-orange-500 text-white"
               : "bg-gray-200 hover:bg-gray-300"
-          }`}
+            }`}
           onClick={() => setIsGrocery(true)}
         >
           Grocery
