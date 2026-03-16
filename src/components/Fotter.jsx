@@ -35,7 +35,7 @@ const Footer = () => {
               <FaGithub />
             </a>
 
-            <a href="#" className="hover:text-white">
+            <a href="https://www.linkedin.com/in/shubham-chauhan-aaa832397/" className="hover:text-white">
               <FaLinkedin />
             </a>
 
