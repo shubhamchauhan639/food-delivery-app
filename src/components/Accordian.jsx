@@ -6,7 +6,7 @@ const Accordion = ({ title, items }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
       
-      {/* Accordion Header */}
+   
       <div
         className="flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition"
         onClick={() => setOpen(!open)}
@@ -20,7 +20,7 @@ const Accordion = ({ title, items }) => {
         </span>
       </div>
 
-      {/* Accordion Content */}
+
       {open && (
         <div className="border-t border-gray-100">
           {items?.map((item) => {
@@ -37,10 +37,10 @@ const Accordion = ({ title, items }) => {
                 className="flex justify-between items-center p-5 hover:bg-gray-50 transition border-b last:border-none"
               >
                 
-                {/* Food Info */}
+         
                 <div className="w-[70%]">
 
-                  {/* Veg / Non-Veg Icon */}
+            
                   <div
                     className={`w-4 h-4 border mb-2 flex items-center justify-center
                     ${isVeg ? "border-green-600" : "border-red-600"}`}
