@@ -64,7 +64,7 @@ const Accordion = ({ title, items }) => {
                   </p>
                 </div>
 
-                {/* Food Image */}
+         
                 <div className="relative">
                   {info?.imageId && (
                     <img
