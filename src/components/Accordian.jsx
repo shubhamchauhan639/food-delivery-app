@@ -28,7 +28,7 @@ const Accordion = ({ title, items }) => {
 
             if (!info) return null;
 
-            // Veg / Non-Veg detection from API
+      
             const isVeg = info?.veg === true;
 
             return (
