@@ -8,13 +8,33 @@ const cartSlice = createSlice({
 
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
+      const item = action.payload;
+
+      const existingItem = state.items.find(
+        (i) => i?.card?.info?.id === item?.card?.info?.id
+      );
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.items.push({ ...item, quantity: 1 });
+      }
     },
 
     removeItem: (state, action) => {
-      state.items = state.items.filter(
-        (item) => item?.card?.info?.id !== action.payload
+      const id = action.payload;
+
+      const existingItem = state.items.find(
+        (i) => i?.card?.info?.id === id
       );
+
+      if (existingItem.quantity === 1) {
+        state.items = state.items.filter(
+          (i) => i?.card?.info?.id !== id
+        );
+      } else {
+        existingItem.quantity -= 1;
+      }
     },
 
     clearCart: (state) => {
