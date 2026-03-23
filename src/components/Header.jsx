@@ -1,12 +1,13 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
   const [loginButton , setLoginButoon] = useState("Log In")
-
+const cartItems = useSelector((store) => store.cart.items)
+console.log(cartItems)
 
   return(
 
@@ -32,7 +33,8 @@ const Header = () => {
         </li>
 
         <li className="hover:text-orange-500 cursor-pointer">
-          cart
+            <Link to="/cart">   cart : {cartItems.length}</Link>
+       
         </li>
 
         <button

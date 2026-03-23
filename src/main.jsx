@@ -9,6 +9,7 @@ import Help from './components/Help.jsx'
 import Body from './components/Body.jsx'
 import RestaurantMenu from './components/RestaurantMenu.jsx'
 import Offer from './components/Offer.jsx'
+import Cart from './components/Cart.jsx'
 
 
 
@@ -42,7 +43,12 @@ element : <Body/>
   {
     path: "/restaurant/:resId",
     element : <RestaurantMenu/>
+  },
+   {
+    path: "/cart",
+    element : <Cart/>
   }
+ ,
 ],
 errorElement : <Error/>
 }])

@@ -1,7 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const Accordion = ({ title, items }) => {
   const [open, setOpen] = useState(title === "Recommended");
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+   
+  }
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
@@ -77,7 +84,8 @@ const Accordion = ({ title, items }) => {
                     />
                   )}
 
-                  <button className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white border border-gray-300 px-4 py-1 rounded-md text-green-600 font-semibold text-sm shadow hover:bg-gray-50">
+                  <button className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white border border-gray-300 px-4 py-1 rounded-md text-green-600 font-semibold text-sm shadow hover:bg-gray-50"
+                  onClick={()=>{handleAddItem(item)}}>
                     ADD
                   </button>
                 </div>
