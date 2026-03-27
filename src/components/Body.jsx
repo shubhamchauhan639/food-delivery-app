@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Grocery from "./Grocery";
 import CategorySlider from "./CategorySlider";
+import HomeBanner from "./HomeBanner";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -109,6 +110,7 @@ const Body = () => {
           </div>
 
           <CategorySlider />
+           <HomeBanner />
         </>
       )}
 
