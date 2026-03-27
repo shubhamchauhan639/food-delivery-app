@@ -33,18 +33,18 @@ const HomeBanner = () => {
   const [current, setCurrent] = useState(0);
 
   // Auto slide
-  useEffect(() => {
+ useEffect(() => {
 
-    const interval = setInterval(() => {
+  const interval = setInterval(() => {
 
-      setCurrent((prev) => (prev + 1) % banners.length);
+    setCurrent((prev) => (prev + 1) % banners.length);
 
-    }, 4000);
+  }, 7000); // 7 seconds
+  
 
-    return () => clearInterval(interval);
+  return () => clearInterval(interval);
 
-  }, []);
-
+}, []);
   return (
 
     <div className="w-full py-6">

@@ -42,91 +42,106 @@ const Body = () => {
 
   if (!isGrocery && listOfRes.length === 0) return <Shimmer />;
 
-  return (
-    <div className="max-w-[1200px] mx-auto px-5">
+ return (
+ <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
 
-      <div className="flex justify-center gap-5 mt-8 mb-8">
-        <button
-          className={`px-8 py-3 rounded-full font-semibold ${!isGrocery
-              ? "bg-orange-500 text-white"
-              : "bg-gray-200 hover:bg-gray-300"
-            }`}
-          onClick={() => setIsGrocery(false)}
-        >
-          Food
-        </button>
+    {/* Toggle Buttons */}
+    <div className="flex justify-center gap-6 mt-10 mb-10">
+      <button
+        className={`px-8 py-3 rounded-full font-semibold text-sm shadow-sm transition duration-300 ${
+          !isGrocery
+            ? "bg-orange-500 text-white shadow-md scale-105"
+            : "bg-gray-100 hover:bg-gray-200"
+        }`}
+        onClick={() => setIsGrocery(false)}
+      >
+        Food
+      </button>
 
-        <button
-          className={`px-8 py-3 rounded-full font-semibold ${isGrocery
-              ? "bg-orange-500 text-white"
-              : "bg-gray-200 hover:bg-gray-300"
-            }`}
-          onClick={() => setIsGrocery(true)}
-        >
-          Grocery
-        </button>
-      </div>
+      <button
+        className={`px-8 py-3 rounded-full font-semibold text-sm shadow-sm transition duration-300 ${
+          isGrocery
+            ? "bg-orange-500 text-white shadow-md scale-105"
+            : "bg-gray-100 hover:bg-gray-200"
+        }`}
+        onClick={() => setIsGrocery(true)}
+      >
+        Grocery
+      </button>
+    </div>
 
-      {!isGrocery && (
-        <>
-          <div className="flex flex-wrap items-center gap-4 mb-8">
+    {!isGrocery && (
+      <>
+        {/* Search Section */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
 
-            <div className="flex gap-3">
-              <input
-                type="text"
-                className="px-6 py-4 w-[580px] border rounded-lg outline-none focus:border-orange-500"
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                placeholder="Search restaurants"
-              />
-
-              <button
-                className="px-6 py-4 w-[140px] bg-orange-500 text-white rounded-lg"
-                onClick={() => {
-                  const filteredRes = listOfRes.filter((res) =>
-                    res?.info?.name
-                      ?.toLowerCase()
-                      .includes(searchText.toLowerCase())
-                  );
-                  setFilterRes(filteredRes);
-                }}
-              >
-                Search
-              </button>
-            </div>
+          {/* Search Box */}
+          <div className="flex gap-3 w-full md:w-auto">
+            <input
+              type="text"
+              className="px-5 py-3 w-full md:w-[400px] border border-gray-200 rounded-xl outline-none 
+              focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition duration-200 shadow-sm"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              placeholder="Search for restaurants, food..."
+            />
 
             <button
-              className="px-5 py-2 border rounded-lg hover:bg-orange-500 hover:text-white"
+              className="px-6 py-3 bg-orange-500 text-white rounded-xl shadow-md hover:bg-orange-600 active:scale-95 transition duration-200"
               onClick={() => {
-                const FilterList = listOfRes.filter(
-                  (res) => res.info.avgRating > 4.5
+                const filteredRes = listOfRes.filter((res) =>
+                  res?.info?.name
+                    ?.toLowerCase()
+                    .includes(searchText.toLowerCase())
                 );
-                setFilterRes(FilterList);
+                setFilterRes(filteredRes);
               }}
             >
-              Top Rated Restaurant
+              Search
             </button>
-
           </div>
 
-          <CategorySlider />
-           <HomeBanner />
-        </>
-      )}
+          {/* Filter Button */}
+          <button
+            className="px-5 py-3 border border-gray-200 rounded-xl bg-white shadow-sm 
+            hover:bg-orange-500 hover:text-white hover:shadow-md transition duration-300"
+            onClick={() => {
+              const FilterList = listOfRes.filter(
+                (res) => res.info.avgRating > 4.5
+              );
+              setFilterRes(FilterList);
+            }}
+          >
+            ⭐ Top Rated
+          </button>
 
-      {isGrocery ? (
-        <Grocery />
-      ) : (
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-6">
-          {filterRest.map((rest) => (
-            <Link key={rest.info.id} to={"/restaurant/" + rest.info.id}>
-              <Card resData={rest.info} />
-            </Link>
-          ))}
         </div>
-      )}
-    </div>
-  );
+
+        {/* Category + Banner */}
+        <div className="space-y-10">
+          <CategorySlider />
+          <HomeBanner />
+        </div>
+      </>
+    )}
+
+    {isGrocery ? (
+      <Grocery />
+    ) : (
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-8 mt-6">
+        {filterRest.map((rest) => (
+          <Link
+            key={rest.info.id}
+            to={"/restaurant/" + rest.info.id}
+            className="transform hover:scale-[1.03] transition duration-300"
+          >
+            <Card resData={rest.info} />
+          </Link>
+        ))}
+      </div>
+    )}
+  </div>
+);
 };
 
 export default Body;
