@@ -9,7 +9,7 @@ const AppLayout = () => {
 
   // ✅ Show footer only on Home & Restaurant pages
   const shouldShowFooter =
-    location.pathname === "/" ||
+    location.pathname === "/app" ||
     location.pathname.startsWith("/restaurant");
 
   return (

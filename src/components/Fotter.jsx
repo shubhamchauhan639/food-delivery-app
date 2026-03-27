@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,10 +20,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-white cursor-pointer">Home</li>
-            <li className="hover:text-white cursor-pointer">Restaurants</li>
-            <li className="hover:text-white cursor-pointer">Grocery</li>
-            <li className="hover:text-white cursor-pointer">Contact</li>
+            <li><Link to="/app" className="hover:text-white">Home</Link></li>
+            <li><Link to="/app" className="hover:text-white">Restaurants</Link></li>
+            <li><Link to="/app/grocery" className="hover:text-white">Grocery</Link></li>
+            <li><Link to="/app/contact" className="hover:text-white">Contact</Link></li>
           </ul>
         </div>
 
@@ -31,11 +32,11 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
 
           <div className="flex gap-4 text-xl">
-            <a href="https://github.com/shubhamchauhan639" className="hover:text-white">
+            <a href="https://github.com/shubhamchauhan639" target="_blank" className="hover:text-white">
               <FaGithub />
             </a>
 
-            <a href="https://www.linkedin.com/in/shubham-chauhan-aaa832397/" className="hover:text-white">
+            <a href="https://www.linkedin.com/in/shubham-chauhan-aaa832397/" target="_blank" className="hover:text-white">
               <FaLinkedin />
             </a>
 

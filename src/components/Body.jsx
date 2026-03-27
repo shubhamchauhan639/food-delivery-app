@@ -132,7 +132,7 @@ const Body = () => {
         {filterRest.map((rest) => (
           <Link
             key={rest.info.id}
-            to={"/restaurant/" + rest.info.id}
+            to={"/app/restaurant/" + rest.info.id}
             className="transform hover:scale-[1.03] transition duration-300"
           >
             <Card resData={rest.info} />

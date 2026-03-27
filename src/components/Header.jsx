@@ -21,19 +21,19 @@ console.log(cartItems)
       <ul className="flex items-center gap-6 text-[16px] font-medium"> 
 
         <li className="hover:text-orange-500 cursor-pointer">
-          <Link to="/">Home</Link>
+          <Link to="/app">Home</Link>
         </li>
 
         <li className="hover:text-orange-500 cursor-pointer">
-          <Link to="/help">Help</Link>
+          <Link to="/app/help">Help</Link>
         </li>
 
         <li className="hover:text-orange-500 cursor-pointer">
-          <Link to="/offers">Offers</Link>
+          <Link to="/app/offers">Offers</Link>
         </li>
 
         <li className="hover:text-orange-500 cursor-pointer">
-            <Link to="/cart">   cart : {cartItems.length}</Link>
+            <Link to="/app/cart">   cart : {cartItems.length}</Link>
        
         </li>
 
