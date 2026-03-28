@@ -73,7 +73,7 @@ const Body = () => {
     {!isGrocery && (
       <>
         {/* Search Section */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-10">
+        <div className="flex flex-wrap items-center gap-4 mb-10">
 
           {/* Search Box */}
           <div className="flex gap-3 w-full md:w-auto">
