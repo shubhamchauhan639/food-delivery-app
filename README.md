@@ -10,6 +10,7 @@ A modern and responsive **Food Delivery Web Application** built using **React.js
 - ⭐ Filter top-rated restaurants
 - 🍽️ Dynamic restaurant menu page
 - 📂 Accordion-style menu categories
+- 🛒 Grocery feature
 - 🛒 Add to Cart functionality
 - ➕ Increment cart item quantity
 - ➖ Decrement cart item quantity
