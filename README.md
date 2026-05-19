@@ -1,30 +1,71 @@
-🍔 Food Delivery App (React)
+# 🍔 Foodie
 
-A modern Food Delivery Web Application built using React.js that fetches live restaurant data and menus from an API.
-Users can search restaurants, filter top-rated ones, and view detailed menus with an interactive accordion UI.
+A modern and responsive **Food Delivery Web Application** built using **React.js + Vite** that fetches live restaurant and menu data from an API. Users can search restaurants, filter top-rated restaurants, explore detailed menus, and manage cart items with a smooth and interactive user experience.
 
-🚀 Features
+---
 
-✅ Fetch restaurants from live API
-✅ Search restaurants by name
-✅ Filter top-rated restaurants
-✅ Restaurant menu page
-✅ Accordion-style menu items
-✅ Online/Offline detection
-✅ Shimmer loading effect
-✅ React Router navigation
-✅ Responsive UI
+# 🚀 Features
 
-🛠️ Tech Stack
+- 🔍 Search restaurants by name
+- ⭐ Filter top-rated restaurants
+- 🍽️ Dynamic restaurant menu page
+- 📂 Accordion-style menu categories
+- 🛒 Add to Cart functionality
+- ➕ Increment cart item quantity
+- ➖ Decrement cart item quantity
+- 🗑️ Remove items from cart
+- 💾 Cart state management using Redux Toolkit
+- 🌐 Online/Offline status detection
+- ⚡ Shimmer loading effect
+- 🛣️ Client-side routing
+- 📱 Fully responsive UI
+- 🔄 Live API integration
 
-React.js
+---
 
-React Router DOM
+# 🛠️ Tech Stack
 
-JavaScript (ES6+)
+- React.js
+- Vite
+- React Router DOM
+- JavaScript (ES6+)
+- CSS
+- Redux Toolkit
+- React Redux
+- Jest
+- React Testing Library
 
-CSS
+---
 
-React Icons
+# 📂 Project Architecture
 
-REST API (NamasteDev Swiggy API)
+```bash
+Foodie
+│
+├── Header
+│   ├── Logo
+│   ├── Nav Items
+│   └── Cart
+│
+├── Body
+│   ├── Search
+│   ├── RestaurantContainer
+│   └── RestaurantCard
+│       ├── Image
+│       ├── Restaurant Name
+│       ├── Star Rating
+│       ├── Cuisine
+│       └── Delivery Time
+│
+├── Cart
+│   ├── Add Item
+│   ├── Remove Item
+│   ├── Increment Quantity
+│   └── Decrement Quantity
+│
+└── Footer
+    ├── Copyright
+    ├── Links
+    ├── Address
+    └── Contact
+```
