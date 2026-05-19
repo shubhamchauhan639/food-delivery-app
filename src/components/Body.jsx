@@ -6,6 +6,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import Grocery from "./Grocery";
 import CategorySlider from "./CategorySlider";
 import HomeBanner from "./HomeBanner";
+import { Food_api } from "../utils/constants";
 
 const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
@@ -19,7 +20,8 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants"
+      Food_api
+      
     );
 
     const json = await data.json();
